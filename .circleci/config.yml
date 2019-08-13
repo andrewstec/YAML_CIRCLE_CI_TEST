@@ -10,7 +10,7 @@ jobs:
       - run: 
           name: "Setup custom environment variables"
           command: |
-            echo 'export MY_ENV_VAR="FOO"' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
+            echo 'export MY_ENV_VAR="${ENVVAR}"' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
 
       - run:
           name: Greeting
