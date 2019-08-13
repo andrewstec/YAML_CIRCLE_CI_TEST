@@ -2,19 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: debian:stretch
+
     steps:
       - checkout
-      - run: echo $ENVVAR
-  test:
-    docker:
-      - image: circleci/nodejs:8.1.2
-    steps:
-      - checkout
-      - run: $ENVVAR
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+
+      - run:
+          name: Greeting
+          command: echo $ENVVAR is here.
+
+      - run:
+          name: Print the Current Time
+          command: date
