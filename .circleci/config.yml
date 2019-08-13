@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Greeting
-          command: echo $ENVVAR is here.
+          command: echo "{{ $ENVVAR | env}}".enc is here.
 
       - run:
           name: Print the Current Time
