@@ -10,11 +10,11 @@ jobs:
       - run: 
           name: "Setup custom environment variables"
           command: |
-            echo 'export MY_ENV_VAR=""${ENVVAR}":-env"' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
+            echo 'export MY_ENV_VAR="${ENVVAR:-env}"' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
 
       - run:
           name: Greeting
-          command: echo $MY_ENV_VAR is here.
+          command: echo $MY_ENV_VAR.enc is here.
 
       - run:
           name: Print the Current Time
